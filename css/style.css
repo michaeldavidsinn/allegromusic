@@ -7786,3 +7786,60 @@ button, .sc_button, .menu_main_nav, .top_panel_top {
 .disclaimer_content button:hover {
     background-color: #633419 !important; /* Warna Coklat Tua saat hover */
 }
+
+
+/* --- PERBAIKAN TAMPILAN MOBILE (REVISI: Agar tidak kepanjangan) --- */
+@media (max-width: 768px) {
+    /* 1. Paksa tinggi container mengikuti isi konten SAJA */
+    .sc_parallax_content {
+        height: auto !important;       
+        min-height: unset !important;  /* HAPUS paksaan tinggi layar */
+        padding-top: 50px !important;  /* Jarak atas secukupnya */
+        padding-bottom: 50px !important; /* Jarak bawah secukupnya */
+        background-attachment: scroll !important; 
+        background-size: cover !important;
+    }
+
+    /* 2. Sesuaikan ukuran font judul */
+    .sc_title.margin_top_huge {
+        margin-top: 2rem !important; 
+        font-size: 1.8rem !important; 
+    }
+
+    /* 3. Sesuaikan ukuran font deskripsi */
+    .sc_highlight {
+        font-size: 1.2em !important;
+        line-height: 1.4em !important;
+    }
+    
+    /* 4. Jarak antar item statistik */
+    .sc_skills_columns_5 .sc_skills_column {
+        margin-bottom: 30px !important;
+    }
+}
+
+
+
+/* --- PERBAIKAN TOMBOL SOSMED AGAR MUDAH DITEKAN DI HP --- */
+
+/* 1. Perbesar Kotak dan Ikon secara Ekstrem */
+.sc_team_item .sc_socials_item a.social_icons {
+    width: 50px !important;        /* Lebar tombol lebih besar (standar jempol) */
+    height: 50px !important;       /* Tinggi tombol lebih besar */
+    line-height: 50px !important;  /* Agar ikon pas di tengah */
+    font-size: 24px !important;    /* Ukuran ikon di dalamnya diperbesar */
+    border-radius: 50% !important; /* Tetap bulat */
+    display: inline-block !important;
+}
+
+/* 2. Beri Jarak Antar Tombol (Biar tidak salah pencet) */
+.sc_team_item .sc_socials_item {
+    margin: 0 10px !important;     /* Jarak kiri-kanan lebih lega */
+    display: inline-block !important;
+}
+
+/* 3. Pastikan Wadahnya Cukup Tinggi */
+.sc_team_item .sc_socials {
+    margin-top: 15px !important;   /* Jarak dari teks jabatan ke tombol */
+    padding-bottom: 10px !important;
+}
