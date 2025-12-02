@@ -7843,3 +7843,338 @@ button, .sc_button, .menu_main_nav, .top_panel_top {
     margin-top: 15px !important;   /* Jarak dari teks jabatan ke tombol */
     padding-bottom: 10px !important;
 }
+
+
+
+
+/* --- GLOBAL H1 STYLE: PINYON SCRIPT --- */
+h1, 
+h1.sc_item_title, 
+.sc_section_title,
+.sc_call_to_action_title {
+    font-family: 'Pinyon Script', cursive !important;
+    color: #c58042 !important;       /* Warna Emas/Orange */
+    font-weight: 400 !important;     /* Ketebalan normal (font script tidak perlu bold) */
+    text-transform: none !important; /* Matikan huruf kapital semua (uppercase) agar script terbaca */
+    font-size: 3.3em !important;       /* Ukuran besar agar terlihat elegan */
+    line-height: 1.2em !important;   /* Jarak baris */
+    margin-bottom: 0.5rem !important;
+}
+
+/* Penyesuaian khusus untuk Mobile agar tidak terlalu raksasa */
+@media (max-width: 768px) {
+    h1, h1.sc_item_title, .sc_section_title {
+        font-size: 3em !important;
+    }
+}
+
+
+/* --- UPDATE TYPOGRAPHY (SWAPPED) --- */
+
+/* 1. BODY & TEXT ISI (Apple Garamond Style -> EB Garamond) */
+body, p, li, textarea, .sc_promo_descr, .sc_section_content_wrap {
+    font-family: 'EB Garamond', 'Garamond', serif !important;
+    font-size: 15.3px !important; /* Font Serif butuh size agak besar agar nyaman dibaca */
+    line-height: 1.6em !important;
+    font-weight: 400 !important;
+    color: rgba(61, 48, 40, 0.9); /* Warna sedikit dipertegas agar serif jelas */
+}
+
+/* 2. SUBHEADING & UI ELEMENTS (Futura Style -> Jost) */
+h3, h4, h5, h6, 
+.sc_item_subtitle, 
+.sc_section_subtitle, 
+.widget_title, 
+.post_info,
+.sc_skills_label,
+.sc_team_item_position,
+input, select, .sc_button, .menu_main_nav { /* Tombol & Menu tetap Sans-serif biar modern */
+    font-family: 'Jost', 'Futura', sans-serif !important;
+    font-weight: 500 !important;
+    letter-spacing: 2px !important; /* Ciri khas Futura: spacing agak lebar */
+    text-transform: uppercase !important; /* Subheading Futura biasanya kapital semua */
+    margin-top: 5px;
+}
+
+/* 3. HEADING UTAMA (Tetap Playfair Display) */
+h1, h2, .sc_item_title {
+    font-family: 'Playfair Display', serif !important;
+    font-weight: 700 !important;
+    letter-spacing: normal !important;
+    text-transform: none !important;
+}
+
+/* Pengecualian: Nama Guru di Testimoni (Bagusan pakai Playfair/Jost) */
+.sc_testimonial_author_name {
+    font-family: 'Playfair Display', serif !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* --- ALLEGRO TIMELINE STYLE --- */
+
+.allegro-timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Garis Vertikal Tengah */
+.allegro-timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: #c58042; /* Warna Emas */
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+    border-radius: 2px;
+}
+
+/* Container Item */
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+/* Posisi Kiri & Kanan */
+.timeline-item.left { left: 0; text-align: right; }
+.timeline-item.right { left: 50%; text-align: left; }
+
+/* Lingkaran (Dot) di Tengah */
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -10px;
+    background-color: #faf3e1;
+    border: 4px solid #c58042;
+    top: 25px;
+    border-radius: 50%;
+    z-index: 1;
+}
+.timeline-item.right::after { left: -10px; }
+
+/* Konten dalam Box */
+.timeline-content {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    border: 1px solid #eee;
+    transition: transform 0.3s ease;
+}
+.timeline-content:hover {
+    transform: translateY(-5px); /* Efek naik saat hover */
+    border-color: #c58042;
+}
+
+/* Gambar Timeline */
+.timeline-img img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+/* Tipografi Timeline */
+.timeline-text .year {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 36px !important;
+    color: #c58042 !important;
+    margin: 0 0 5px 0 !important;
+    line-height: 1;
+}
+.timeline-text .title {
+    font-family: 'Jost', sans-serif !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    color: #3d3028 !important;
+    margin: 0 0 10px 0 !important;
+}
+.timeline-text p {
+    font-family: 'EB Garamond', serif !important;
+    font-size: 16px !important;
+    line-height: 1.5em !important;
+    margin: 0 !important;
+    color: #666;
+}
+
+/* --- RESPONSIVE (TAMPILAN HP) --- */
+@media screen and (max-width: 768px) {
+    /* Garis pindah ke kiri */
+    .allegro-timeline::after { left: 20px; }
+    
+    /* Item lebar penuh */
+    .timeline-item {
+        width: 100%;
+        padding-left: 50px; /* Jarak dari garis kiri */
+        padding-right: 10px;
+    }
+    
+    /* Reset posisi kiri/kanan jadi rata kiri semua */
+    .timeline-item.left, .timeline-item.right {
+        left: 0;
+        text-align: left;
+    }
+    
+    /* Posisi Dot di kiri */
+    .timeline-item.left::after, .timeline-item.right::after {
+        left: 11px; /* Sesuaikan dengan posisi garis */
+    }
+}
+
+
+
+
+
+
+
+/* --- PERBAIKAN WHITE SPACE PADA TESTIMONI & PARALLAX --- */
+
+/* 1. Paksa tinggi background parallax mengikuti isinya */
+.sc_parallax .sc_parallax_content {
+    height: auto !important;
+    min-height: unset !important;
+    padding-bottom: 0 !important;
+    background-position: center center !important;
+    /* Opsional: Jika ingin mematikan efek gerak agar background stabil */
+    /* background-attachment: scroll !important; */ 
+}
+
+/* 2. Hilangkan jarak di section Next Event */
+.events.vc_row {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* 3. Pastikan wrapper testimoni tidak mendorong ke bawah */
+.sc_testimonials_style_testimonials-1 {
+    margin-bottom: 0 !important;
+}
+
+
+
+.top_panel_middle .content_wrap {
+    display: flex;
+    align-items: center;       /* Vertically center */
+    justify-content: space-between;  /* Logo kiri – menu kanan */
+}
+
+.menu_main_wrap nav ul {
+    display: flex;
+    gap: 40px;                 /* Jarak antar menu */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu_main_wrap nav ul li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+
+.contact_logo {
+    margin-right: 450px;   /* Atur jarak sesuai kebutuhan */
+}
+
+
+
+/* --- PERBAIKAN FOOTER COPYRIGHT (DESKTOP SEJAJAR) --- */
+
+.footer_copyright_flex {
+    display: flex;
+    align-items: center;     /* Rata tengah secara vertikal */
+    justify-content: center; /* Rata tengah secara horizontal */
+    gap: 25px;               /* Jarak antara Logo dan Teks */
+    margin-top: 25px;
+}
+
+/* Logo */
+.footer_logo_item img {
+    max-width: 120px; /* Ukuran logo */
+    height: auto;
+    display: block;
+}
+
+/* Teks */
+.footer_text_item p {
+    margin: 0 !important;
+    line-height: 1.6;
+    text-align: left; /* Di Desktop rata kiri biar rapi sebelah logo */
+}
+
+/* --- RESPONSIF UNTUK HP (Kembali Menumpuk) --- */
+@media (max-width: 768px) {
+    .footer_copyright_flex {
+        flex-direction: column; /* Ubah jadi tumpuk atas-bawah */
+        gap: 15px;
+    }
+    
+    .footer_text_item p {
+        text-align: center; /* Di HP kembali rata tengah */
+    }
+}
+
+
+
+/* --- LAYOUT FOOTER BAWAH (SEJAJAR) --- */
+
+/* 1. Container Utama: Kiri-Kanan */
+.footer_bottom_flex {
+    display: flex !important;
+    justify-content: space-between !important; /* Mentok Kiri & Kanan */
+    align-items: center !important; /* Rata Tengah Vertikal */
+    padding: 10px 0;
+}
+
+/* 2. Pastikan elemen di dalamnya reset margin */
+.footer_bottom_flex .copyright_text,
+.footer_bottom_flex .sc_socials {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+/* 3. Style khusus Logo & Teks agar sebaris juga */
+.footer_copyright_flex {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 0 !important;
+}
+
+/* RESPONSIF HP (MOBILE) */
+@media (max-width: 768px) {
+    .footer_bottom_flex {
+        flex-direction: column-reverse !important; /* Sosmed di atas, Copyright di bawah */
+        gap: 20px;
+        text-align: center;
+    }
+    
+    .footer_copyright_flex {
+        flex-direction: column !important; /* Logo atas, Teks bawah */
+        gap: 10px;
+    }
+    
+    .footer_text_item p {
+        text-align: center !important;
+    }
+}
